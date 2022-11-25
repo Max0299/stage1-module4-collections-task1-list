@@ -15,7 +15,12 @@ public class ListSorter {
 class ListComparator implements Comparator<String> {
     @Override
     public int compare(String a, String b) {
-        return String.CASE_INSENSITIVE_ORDER.compare(a,b);
+        int x = Integer.parseInt(a);
+        int y = Integer.parseInt(b);
+
+        if(Math.pow(x,2) == Math.pow(y,2)) return x > y ? 1 :-1;
+
+        return Integer.compare(5 * x * x - 3, 5 * y * y - 3);
 
     }
 }
